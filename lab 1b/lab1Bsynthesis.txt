@@ -1,0 +1,26 @@
+******************************
+* Lab 1b Synthesis Questions *
+******************************
+Name(Ishaan Srivastava):  
+NetID(ishaan03): 
+
+
+-----------------------------------------------------------
+1) Benefit 1: Can store more unique ID's since there are 8 bits for the ID instead of 6 bits in the current representation.
+
+   Benefit 2: Can store more items because an integer can represent a lot of numbers while the current representation can only represent up to 10 items since there are only 10 bits for the spaces.
+
+   Drawback: The new representation does not keep track of which spaces are filled and which are empty, while the current representation does.
+
+   Preference & Justification: I would prefer to use the current representation because it keeps track of which spaces are filled and which are empty, which is useful for knowing when to restock items. The new representation would only allow us to keep track of the total number of items in a section, which would not be as useful for managing the store.
+
+-----------------------------------------------------------
+2) Difference? Y/N: Yes
+
+   Explain: If y is an unsigned type, then 0xFFFFFFFF would be interpreted as a large positive number, while -1 would be interpreted as a negative number.  
+
+-----------------------------------------------------------
+3) Explain: Comparing two floating point numbers with == or != is problematic because of floating-point errors (underflow and overflow) since there is a finite number of bits to represent a floating point number. This means that two floating point numbers that are mathematically equal might be unequal in the computer's representation.
+
+   Considerations: Consider the size of the numbers being compared when choosing a threshold. For very large numbers, a larger threshold might be needed to account for larger floating-point errors, and the opposite for very small numbers.
+

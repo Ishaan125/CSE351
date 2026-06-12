@@ -1,0 +1,19 @@
+*****************************
+* Lab 5 Synthesis Questions *
+*****************************
+Name(Ishaan Srivastava):  
+NetID(ishaan03): 
+
+
+-----------------------------------------------------------
+1) Boundary Tag Size: 8 bytes  
+   Reasoning: For malloc sizes 1 through 24, the difference between the two addresses is always 0x20 = 32 bytes, meaning all those payloads fit in a 32-byte block. When the size increases to 25, the difference jumps to 0x30 = 48 bytes. This means a 24-byte payload fits in a 32-byte block but a 25-byte payload does not, so the overhead must be exactly 32 - 24 = 8 bytes.
+
+
+
+-----------------------------------------------------------
+2) Example or explanation of lack of benefit: Yes, understanding the internals helps me see which allocation patterns reduce fragmentation. For example, structuring requested sizes so that the total block (including metadata and padding) lands exactly on an 8-byte alignment boundary maximizes space efficiency. Making many tiny allocations (like 1 or 4 bytes) instead wastes a lot of heap space on tracking tags and padding. A user can avoid this by bundling small variables together into a single larger allocation to cleanly fill those alignment slots.
+
+
+
+-----------------------------------------------------------

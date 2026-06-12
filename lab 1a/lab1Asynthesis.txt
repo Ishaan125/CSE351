@@ -1,0 +1,27 @@
+******************************
+* Lab 1a Synthesis Questions *
+******************************
+Name(Ishaan Srivastava):  
+NetID(ishaan03): 
+
+
+-----------------------------------------------------------
+1) Steps:
+To calculate the difference in bytes between two addresses in C, first declare two pointers to the elements 
+whose difference you want to find.
+Then, cast them to char pointers before subtracting. This is necessary because pointer arithmetic in C is based on the size of the type the pointer points to. 
+
+-----------------------------------------------------------
+2) Explain:
+The parameters to the function swap_ints must both be pointers because the function needs to modify the values that the 
+pointers actually point to. 
+If the parameters were integers instead, the function would only be modifying local copies of those integers.
+
+-----------------------------------------------------------
+3) Positive Impact(s) and Drawback/Limitation(s):
+A positive impact of using Java in the intro series is that it allows us to focus on object-oriented programming which 
+abstracts away the more confusing hardware side which can be overwhelming to start with.
+A drawback of using Java is that it leaves out pointers, which are a fundamental concept in programming and understanding how 
+memory works. This can make it more difficult to learn C later on, because we have to learn about pointers and 
+memory management from scratch.
+

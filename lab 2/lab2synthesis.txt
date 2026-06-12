@@ -1,0 +1,25 @@
+*****************************
+* Lab 2 Synthesis Questions *
+*****************************
+Name(Ishaan Srivastava):  
+NetID(ishaan03): 
+
+
+-----------------------------------------------------------
+1) &value: 12 
+   &array: 16 
+-----------------------------------------------------------
+2) Init:   <fill_array+40>
+   Update: <fill_array+146>
+-----------------------------------------------------------
+3) String address: 0x4020a2
+   Part of memory: .rodata (read-only)
+   Assembly instruction address: <part_2+8>
+-----------------------------------------------------------
+4) Strategy + example: My strategy which I would recommend was to put a breakpoint at the start of each phase, then use disas and if there was another helper function inside, I would use disas again on that function and trace through the assembly to look for which cases would result in the bomb exploding. This was useful because in phase 5 for example, I could see that the phase called strings_not_equal and by disassembling it I understood that my transformed input had to match a target string. Without tracing into that helper function I would have had no idea what string to target.
+
+-----------------------------------------------------------
+5) Difficulty + why (past experience): The most difficult part for me was tracking which registers held which values and provided which functions at any given point in the code. Unlike variables in languages like C and Java that we learned before, which have clear names and uses, registers in assembly get reused constantly for different purposes (sometimes holding a pointer, sometimes a loop counter, sometimes a return value). This was difficult because for example in phase 5, I had to carefully track that rbx held the input string pointer, rax was the loop index, and rdx was being reused first as the current character then as the table lookup result.
+
+-----------------------------------------------------------
+

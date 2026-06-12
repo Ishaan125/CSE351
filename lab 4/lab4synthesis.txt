@@ -1,0 +1,57 @@
+*****************************
+* Lab 4 Synthesis Questions *
+*****************************
+Name(Ishaan Srivastava):  
+NetID(ishaan03): 
+
+
+-----------------------------------------------------------
+1) Instructions in the nested loops that access memory
+   lab0.d:    19
+   List of instructions for lab0.d:
+400987: mov %rax,-0x30(%rbp)
+40098b: movl $0x0,-0x14(%rbp)
+400994: movl $0x0,-0x18(%rbp)
+40099d: movl $0x0,-0x1c(%rbp)
+4009a6: mov -0x14(%rbp),%edx
+4009a9: mov -0x18(%rbp),%eax
+4009af: mov -0x1c(%rbp),%edx
+4009b2: mov -0x18(%rbp),%ecx
+4009b5: mov -0x14(%rbp),%eax
+4009bc: callq 400939 <bigArrayIndex>
+4009cb: mov -0x28(%rbp),%rax
+4009d2: mov -0x1c(%rbp),%edx
+4009d7: mov %edx,(%rax)
+4009d9: addl $0x1,-0x1c(%rbp)
+4009dd: cmpl $0x1f3,-0x1c(%rbp)
+4009e6: addl $0x1,-0x18(%rbp)
+4009ea: cmpl $0x1f3,-0x18(%rbp)
+4009f3: addl $0x1,-0x14(%rbp)
+4009f7: cmpl $0x1f3,-0x14(%rbp)
+
+   lab0opt.d: 1
+   List of instructions for lab0opt.d:
+4009bb: mov %ecx,(%rsi,%rdx,4)
+
+-----------------------------------------------------------
+2) Where are the loop variables stored in lab0.d:
+   i:-0x14(%rbp) 
+   j:-0x18(%rbp) 
+   k:-0x1c(%rbp) 
+-----------------------------------------------------------
+3) Corresponding values in lab0opt.d:
+   %edx:k 
+   %ecx:i+j+k
+-----------------------------------------------------------
+4) Effect on number of misses: increase
+
+   Explain: If the starting address of Matrix A is misaligned and does not map to the beginning of a cache block, a single row of the 8x8 matrix block will cross a cache line boundary. This means that I will need to load twice as many cache blocks to read the same 8 elements.
+
+
+-----------------------------------------------------------
+5) Effect on number of misses: decrease
+
+   Explain: In the square 64x64 matrix, the power of 2 row size forces rows within the cache blocks to map onto overlapping index sets in the cache, causing many conflict misses. Changing the dimensions to 57x71 alters the row size to a non power of 2 size (71*4 = 284 bytes), which causes successive rows to wrap around to different cache sets and reduce the cache thrashing.
+
+
+-----------------------------------------------------------
